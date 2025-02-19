@@ -198,19 +198,39 @@
             */
 
       const generateTable = function () {
-        const contenitore = document.getElementById("tableArea")
-        const tabella = document.createElement("table")
-
-        const intestazione = document.createElement("tr")
-        const intestazioni = ["Immagine", "Nome prodotto", "Quantità", "Prezzo"]
-        intestazioni.forEach((testo) => {
-          const cellaIntestazione = document.createElement("th")
-          cellaIntestazione.textContent = testo
-          intestazione.appendChild(cellaIntestazione)
-        })
-        tabella.appendChild(intestazione)
-        contenitore.appendChild(tabella)
+        const tableContainer = document.getElementById("tableArea")
+        tableContainer.innerHTML = `
+          <table>
+            <tr>
+              <th>Immagine</th>
+              <th> Prodotto</th>
+              <th>Quantità</th>
+              <th>Prezzo</th>
+              
+              </tr>
+            <tr>
+              <td>Topo Gigio</td>
+              <td>topo</td>
+              <td>001</td>
+              <td>5645767</td>
+            </tr>
+            <tr>
+              <td>Carletto</td>
+              <td>carlo</td>
+              <td>23</td>
+              <td>34536</td>
+            </tr>
+            <tr>
+              <td>L'uomo Tigre</td>
+              <td>tigre</td>
+              <td>005</td>
+              <td>56456457</td>
+            </tr>
+        </table>
+        `
       }
+
+      generateTable()
 
       generateTable()
 
@@ -230,11 +250,24 @@
               Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
             */
 
+      //const changeColorWithRandom = function () {
+      //const h2 = document.getElementById("changeMyColor")
+      //const randomColore =
+      //"#" + Math.floor(Math.random() * 16777215).toString(16)
+      //h2.style.color = randomColore
+      //}
+
       const changeColorWithRandom = function () {
-        const h2 = document.getElementById("changeMyColor")
-        const randomColore =
-          "#" + Math.floor(Math.random() * 16777215).toString(16)
-        h2.style.color = randomColore
+        const colorChanger = document.getElementById("changeMyColor")
+        // let randomColor =
+        //   '#' + Math.floor(Math.random() * 16777215).toString(16)
+        // colorChanger.style.color = randomColor
+        const randomColor = `rgb(${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )})`
+        colorChanger.style.color = randomColor
       }
     </script>
   </body>
